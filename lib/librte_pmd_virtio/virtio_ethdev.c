@@ -799,6 +799,7 @@ eth_virtio_dev_init(__rte_unused struct eth_driver *eth_drv,
 	} else {
 		hw->max_rx_queues = 1;
 		hw->max_tx_queues = 1;
+		virtio_dev_cq_queue_setup(eth_dev, 2, SOCKET_ID_ANY);
 	}
 
 	eth_dev->data->nb_rx_queues = hw->max_rx_queues;
